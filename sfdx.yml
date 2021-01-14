@@ -1,0 +1,6 @@
+scratch-org-def: config/project-scratch-def.json
+run-apex-tests: true
+apex-test-format: tap
+delete-scratch-org: true
+show-scratch-org-url: false
+open-path: /one/one.app#/setup/home

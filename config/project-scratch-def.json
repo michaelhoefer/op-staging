@@ -1,0 +1,18 @@
+{
+  "orgName": "OP Buildpack",
+  "edition": "Developer",
+    "features": [
+        "ForceComPlatform"
+    ],
+    "language": "en_US",
+  "settings": {
+    "lightningExperienceSettings": {
+        "enableS1DesktopEnabled": true
+    },
+    "securitySettings": {
+        "passwordPolicies": {
+            "enableSetPasswordInApi": true
+        }
+    }
+  }
+}
