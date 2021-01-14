@@ -1,0 +1,47 @@
+{
+  "name": "op-staging",
+  "description": "One Pipeline Staging App",
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/salesforce-cli-buildpack"
+    },
+    {
+      "url": "https://github.com/michaelhoefer/op-buildpack"
+    }],
+  "env": {
+    "SFDX_DEV_HUB_AUTH_URL": {
+      "required": true
+    },
+    "SFDX_BUILDPACK_DEBUG": {
+      "required": false
+    },
+    "HEROKU_APP_NAME" : {
+      "required": false
+    },
+    "SFDX_CREATE_PACKAGE_VERSION" : {
+      "required": true
+    },
+    "SFDX_PACKAGE_NAME" : {
+      "required": true
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "./bin/test-setup.sh",
+        "test": "./bin/test.sh"
+      },
+      "formation": {
+        "test": {
+          "quantity": 1,
+          "size": "standard-1x"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "pr-predestroy": "./bin/delete-org.sh"
+  }
+}
+
